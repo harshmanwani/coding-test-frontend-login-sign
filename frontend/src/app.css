@@ -1,0 +1,335 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top: 5px solid #ff9900f2;
+}
+
+h2 {
+  font-family: sans-serif;
+}
+
+button {
+  position: relative;
+  border: none;
+  padding: 1rem;
+  color: white;
+  background: black;
+  font-size: 0.9rem;
+  cursor: pointer;
+  min-width: 8%;
+}
+
+.loggedIn {
+  background-color: #1fa729;
+}
+
+.userinfo {
+  margin: 1rem;
+  width: 50%;
+  word-break: break-all;
+  text-align: center;
+}
+
+.userinfo-text {
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+button::before,
+button::after,
+button span::before,
+button span::after {
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  background: rgb(55, 144, 245);
+  content: "";
+  opacity: 0;
+  position: absolute;
+  transition: opacity 1s ease;
+}
+button::before,
+button::after {
+  height: 3px;
+  width: 0%;
+}
+button::before {
+  right: 0;
+  top: 0;
+}
+button::after {
+  bottom: 0;
+  left: 0;
+}
+button span::before,
+button span::after {
+  height: 0%;
+  width: 3px;
+}
+button span::before {
+  left: 0;
+  top: 0;
+}
+button span::after {
+  bottom: 0;
+  right: 0;
+}
+.loading::before,
+.loading::after,
+.loading span::before,
+.loading span::after {
+  opacity: 1;
+}
+.loading::before {
+  -webkit-animation-name: btn-border-top;
+  animation-name: btn-border-top;
+  -webkit-animation-duration: 2.8s;
+  animation-duration: 2.8s;
+}
+.loading::after {
+  -webkit-animation-name: btn-border-bottom;
+  animation-name: btn-border-bottom;
+  -webkit-animation-delay: 0.7s;
+  animation-delay: 0.7s;
+  -webkit-animation-duration: 2.8s;
+  animation-duration: 2.8s;
+}
+.loading span::before {
+  -webkit-animation-name: btn-border-span-left;
+  animation-name: btn-border-span-left;
+  -webkit-animation-delay: 0.35s;
+  animation-delay: 0.35s;
+  -webkit-animation-duration: 2.8s;
+  animation-duration: 2.8s;
+}
+.loading span::after {
+  -webkit-animation-name: btn-border-span-right;
+  animation-name: btn-border-span-right;
+  -webkit-animation-delay: 1.05s;
+  animation-delay: 1.05s;
+  -webkit-animation-duration: 2.8s;
+  animation-duration: 2.8s;
+}
+
+@-webkit-keyframes btn-border-top {
+  0% {
+    left: auto;
+    right: 0;
+    width: 0%;
+  }
+  12.5% {
+    left: auto;
+    right: 0;
+    width: 100%;
+  }
+  12.6% {
+    left: 0;
+    right: auto;
+  }
+  50% {
+    width: 100%;
+  }
+  62.5% {
+    width: 0%;
+  }
+  100% {
+    left: 0;
+    right: auto;
+    width: 0%;
+  }
+}
+
+@keyframes btn-border-top {
+  0% {
+    left: auto;
+    right: 0;
+    width: 0%;
+  }
+  12.5% {
+    left: auto;
+    right: 0;
+    width: 100%;
+  }
+  12.6% {
+    left: 0;
+    right: auto;
+  }
+  50% {
+    width: 100%;
+  }
+  62.5% {
+    width: 0%;
+  }
+  100% {
+    left: 0;
+    right: auto;
+    width: 0%;
+  }
+}
+@-webkit-keyframes btn-border-bottom {
+  0% {
+    right: auto;
+    left: 0;
+    width: 0%;
+  }
+  12.5% {
+    right: auto;
+    left: 0;
+    width: 100%;
+  }
+  12.6% {
+    right: 0;
+    left: auto;
+  }
+  50% {
+    width: 100%;
+  }
+  62.5% {
+    width: 0%;
+  }
+  100% {
+    right: 0;
+    left: auto;
+    width: 0%;
+  }
+}
+@keyframes btn-border-bottom {
+  0% {
+    right: auto;
+    left: 0;
+    width: 0%;
+  }
+  12.5% {
+    right: auto;
+    left: 0;
+    width: 100%;
+  }
+  12.6% {
+    right: 0;
+    left: auto;
+  }
+  50% {
+    width: 100%;
+  }
+  62.5% {
+    width: 0%;
+  }
+  100% {
+    right: 0;
+    left: auto;
+    width: 0%;
+  }
+}
+@-webkit-keyframes btn-border-span-left {
+  0% {
+    bottom: auto;
+    top: 0;
+    height: 0%;
+  }
+  12.5% {
+    bottom: auto;
+    top: 0;
+    height: 100%;
+  }
+  12.6% {
+    bottom: 0;
+    top: auto;
+  }
+  50% {
+    height: 100%;
+  }
+  62.5% {
+    height: 0%;
+  }
+  100% {
+    bottom: 0;
+    top: auto;
+    height: 0%;
+  }
+}
+@keyframes btn-border-span-left {
+  0% {
+    bottom: auto;
+    top: 0;
+    height: 0%;
+  }
+  12.5% {
+    bottom: auto;
+    top: 0;
+    height: 100%;
+  }
+  12.6% {
+    bottom: 0;
+    top: auto;
+  }
+  50% {
+    height: 100%;
+  }
+  62.5% {
+    height: 0%;
+  }
+  100% {
+    bottom: 0;
+    top: auto;
+    height: 0%;
+  }
+}
+@-webkit-keyframes btn-border-span-right {
+  0% {
+    top: auto;
+    bottom: 0;
+    height: 0%;
+  }
+  12.5% {
+    top: auto;
+    bottom: 0;
+    height: 100%;
+  }
+  12.6% {
+    top: 0;
+    bottom: auto;
+  }
+  50% {
+    height: 100%;
+  }
+  62.5% {
+    height: 0%;
+  }
+  100% {
+    top: 0;
+    bottom: auto;
+    height: 0%;
+  }
+}
+@keyframes btn-border-span-right {
+  0% {
+    top: auto;
+    bottom: 0;
+    height: 0%;
+  }
+  12.5% {
+    top: auto;
+    bottom: 0;
+    height: 100%;
+  }
+  12.6% {
+    top: 0;
+    bottom: auto;
+  }
+  50% {
+    height: 100%;
+  }
+  62.5% {
+    height: 0%;
+  }
+  100% {
+    top: 0;
+    bottom: auto;
+    height: 0%;
+  }
+}
